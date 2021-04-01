@@ -20,9 +20,9 @@ class Screen extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              CustomizeContainerButton(),
-              CustomizeContainerButton(),
-              CustomizeContainerButton(),
+              CustomizeContainerButton(color: Colors.green,),
+              CustomizeContainerButton(color: Colors.yellow),
+              CustomizeContainerButton(color: Colors.red),
             ],
           ),
         )
@@ -35,7 +35,7 @@ class CustomizeContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(50),
+      margin: EdgeInsets.all(30),
       height: 100,
       color: Colors.white,
     );
@@ -43,12 +43,16 @@ class CustomizeContainer extends StatelessWidget {
 }
 
 class CustomizeContainerButton extends StatelessWidget {
+  final Color color;
+
+  CustomizeContainerButton({Key key, this.color}):super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 50,
       height: 50,
-      color: Colors.red,
+      color: color,
     );
   }
 }
